@@ -28,6 +28,7 @@ def get_valid_input(input_prompt, current_inventory, rejectedEntries):
 
                 else:
                     numAmount, current_inventory, rejectedEntries = process_delivery(numAmount, current_inventory, int(amount), rejectedEntries)
+
                     if numAmount == True:
                         return False, current_inventory, rejectedEntries
                     
@@ -59,6 +60,7 @@ def process_delivery(numAmount, current_inventory, added_value, rejectedEntries)
     else:
         print("===========================================================================")
         print(f"Added {added_value} items. New inventory: {current_inventory}")
+        calculate_tax(added_value)
         return numAmount, current_inventory, rejectedEntries
 
 
@@ -66,7 +68,7 @@ def process_delivery(numAmount, current_inventory, added_value, rejectedEntries)
 def calculate_tax(current_inventory):
     tax_rate = 0.1
     tax_amount = current_inventory * tax_rate
-    print(f"Total Tax Amount: ${tax_amount:.2f}" )
+    print(f"Tax Amount: ${tax_amount:.2f}" )
     return tax_amount
 
 
