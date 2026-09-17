@@ -38,6 +38,7 @@ def get_valid_input(input_prompt, current_inventory, rejectedEntries):
     elif input_prompt.lower() == 'quit':
         generate_report(current_inventory, rejectedEntries)
         return True, current_inventory, rejectedEntries
+    
     else:
         print("Invalid input. Please try again.")
         return False, current_inventory, rejectedEntries
